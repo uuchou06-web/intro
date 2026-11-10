@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="周琳芸的音樂與教育個人作品集，分享鋼琴學習、音樂實踐與教育理念。">
+  <meta name="theme-color" content="#f5f0e7">
+  <title>周琳芸｜音樂與教育</title>
+  <style>
+    :root{
+      --paper:#f5f0e7; --paper2:#ebe2d4; --ink:#29251f; --muted:#71695e;
+      --brown:#594638; --gold:#b08a58; --line:#d8cbbb; --white:#fffdf8;
+      --serif: Georgia, "Noto Serif TC", "Songti TC", serif;
+      --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth; scroll-padding-top:86px}
+    body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.8}
+    a{color:inherit}
+    a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offset:4px}
+    .skip{position:absolute;left:12px;top:-60px;background:var(--ink);color:white;padding:8px 14px;z-index:100}
+    .skip:focus{top:12px}
+    .site-header{height:76px;display:flex;align-items:center;justify-content:space-between;padding:0 max(5vw,24px);border-bottom:1px solid var(--line);background:rgba(245,240,231,.96);position:sticky;top:0;z-index:20}
+    .brand{font-family:var(--serif);font-size:19px;letter-spacing:.12em;text-decoration:none}
+    .brand small{font-family:var(--sans);font-size:10px;letter-spacing:.2em;color:var(--muted);display:block;line-height:1.3}
+    nav{display:flex;gap:30px;align-items:center}
+    nav a{text-decoration:none;font-size:13px;letter-spacing:.08em;color:var(--muted)}
+    nav a:hover{color:var(--brown)}
+    .menu-toggle{display:none;background:none;border:1px solid var(--line);padding:8px 12px;color:var(--ink);font:inherit}
+    .hero{min-height:620px;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;padding:72px max(8vw,32px) 86px;gap:7vw;position:relative;overflow:hidden}
+    .hero:after{content:"";position:absolute;width:440px;height:440px;border:1px solid #d9cbb9;border-radius:50%;right:-170px;top:80px;pointer-events:none}
+    .eyebrow{font-size:11px;letter-spacing:.28em;color:var(--gold);text-transform:uppercase;font-weight:600}
+    h1{font-family:var(--serif);font-weight:400;font-size:clamp(48px,7vw,86px);line-height:1.18;letter-spacing:.06em;margin:22px 0 16px}
+    h1 span{display:block;font-family:var(--sans);font-size:17px;letter-spacing:.22em;color:var(--muted);margin-top:16px}
+    .hero-copy{max-width:510px;color:var(--muted);font-size:17px;margin:28px 0 34px}
+    .hero-links{display:flex;gap:14px;flex-wrap:wrap}
+    .button{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:10px 22px;text-decoration:none;border:1px solid var(--brown);font-size:13px;letter-spacing:.1em;transition:background .2s,color .2s}
+    .button.primary{background:var(--brown);color:var(--white)}
+    .button:hover{background:var(--gold);border-color:var(--gold);color:white}
+    .hero-art{min-height:390px;display:flex;align-items:center;justify-content:center;position:relative}
+    .disc{width:min(34vw,360px);aspect-ratio:1;border-radius:50%;background:repeating-radial-gradient(circle at center,#342d27 0 1px,#4c4035 2px 3px,#302923 4px 5px);box-shadow:0 25px 50px #392c2026;position:relative}
+    .disc:before{content:"";position:absolute;inset:37%;border-radius:50%;background:var(--paper2);border:8px solid #9e805c}
+    .disc:after{content:"";position:absolute;width:9px;height:9px;border-radius:50%;background:var(--brown);left:calc(50% - 4.5px);top:calc(50% - 4.5px)}
+    .note{position:absolute;font-family:var(--serif);font-size:88px;color:var(--gold);opacity:.8}
+    .note.one{right:5%;top:2%}.note.two{left:3%;bottom:0;font-size:60px}
+    .section{padding:100px max(8vw,32px)}
+    .section-head{display:grid;grid-template-columns:180px 1fr;gap:30px;align-items:start;margin-bottom:48px}
+    .section-no{font-family:var(--serif);font-size:14px;color:var(--gold);letter-spacing:.16em;padding-top:9px}
+    h2{font-family:var(--serif);font-weight:400;font-size:clamp(32px,4vw,48px);line-height:1.3;margin:0 0 12px;letter-spacing:.05em}
+    .section-intro{color:var(--muted);margin:0;max-width:650px}
+    .about{background:var(--white)}
+    .about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:9vw;align-items:start}
+    .quote{font-family:var(--serif);font-size:clamp(24px,3vw,36px);line-height:1.6;color:var(--brown);border-left:2px solid var(--gold);padding-left:26px;margin:0}
+    .about-text p{margin:0 0 18px;color:var(--muted)}
+    .facts{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+    .fact{border-top:1px solid var(--line);padding:12px 18px 0 0;min-width:150px}
+    .fact strong{display:block;font-family:var(--serif);font-size:18px;font-weight:400;color:var(--brown)}
+    .fact span{font-size:12px;color:var(--muted)}
+    .practice{background:var(--paper)}
+    .practice-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+    .practice-item{background:var(--paper);padding:34px 36px 38px;min-height:205px}
+    .practice-item .index{font-family:var(--serif);font-size:14px;color:var(--gold)}
+    h3{font-family:var(--serif);font-size:25px;font-weight:400;margin:14px 0 8px}
+    .practice-item p{color:var(--muted);margin:0;max-width:470px}
+    .belief{background:var(--brown);color:var(--white);padding:92px max(8vw,32px);text-align:center}
+    .belief .eyebrow{color:#d9bd91}
+    .belief h2{max-width:780px;margin:18px auto 20px}
+    .belief p{max-width:660px;margin:0 auto;color:#e0d5c8}
+    .belief-mark{font-family:var(--serif);font-size:52px;color:#d9bd91;line-height:1;margin-bottom:14px}
+    .contact{background:var(--white)}
+    .contact-inner{display:flex;justify-content:space-between;gap:40px;align-items:end}
+    .contact p{color:var(--muted);max-width:540px;margin-bottom:0}
+    footer{padding:26px max(8vw,32px);display:flex;justify-content:space-between;gap:20px;color:var(--muted);font-size:12px;border-top:1px solid var(--line)}
+    .top-link{text-decoration:none}
+    @media(max-width:760px){
+      .site-header{height:68px;padding:0 22px}
+      .menu-toggle{display:block}
+      nav{display:none;position:absolute;top:67px;left:0;right:0;background:var(--paper);border-bottom:1px solid var(--line);padding:16px 24px 22px;flex-direction:column;align-items:flex-start;gap:12px}
+      nav.open{display:flex}
+      .hero{grid-template-columns:1fr;padding:64px 26px 54px;gap:28px;min-height:auto}
+      .hero-art{min-height:260px;grid-row:1}
+      .disc{width:min(62vw,270px)}
+      .note.one{right:8%;top:-2%;font-size:65px}
+      .note.two{left:8%;bottom:-4%;font-size:48px}
+      .hero-copy{font-size:16px;margin:20px 0 26px}
+      .section{padding:70px 26px}
+      .section-head{grid-template-columns:1fr;gap:8px;margin-bottom:32px}
+      .about-grid{grid-template-columns:1fr;gap:30px}
+      .practice-grid{grid-template-columns:1fr}
+      .practice-item{min-height:0;padding:28px}
+      .belief{padding:70px 26px}
+      .contact-inner{display:block}
+      .contact .button{margin-top:24px}
+      footer{padding:22px 26px;flex-direction:column}
+    }
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important}}
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">跳至主要內容</a>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="周琳芸首頁">LINYUN CHOU<small>MUSIC · EDUCATION</small></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">選單</button>
+    <nav id="site-nav" aria-label="主要導覽">
+      <a href="#about">關於我</a>
+      <a href="#practice">音樂實踐</a>
+      <a href="#belief">教育理念</a>
+      <a href="#contact">聯絡</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="home" aria-labelledby="hero-title">
+      <div>
+        <div class="eyebrow">A PERSONAL MUSIC JOURNEY</div>
+        <h1 id="hero-title">周琳芸<span>音樂演奏・教育探索</span></h1>
+        <p class="hero-copy">在琴鍵與日常之間，持續聆聽、學習與探索。相信音樂不只是技巧的累積，也是一種理解自己、感受世界的方式。</p>
+        <div class="hero-links">
+          <a class="button primary" href="#about">認識我</a>
+          <a class="button" href="#practice">探索我的音樂</a>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <span class="note one">♪</span><div class="disc"></div><span class="note two">♫</span>
+      </div>
+    </section>
+
+    <section class="section about" id="about" aria-labelledby="about-title">
+      <div class="section-head">
+        <div class="section-no">01 / ABOUT</div>
+        <div><h2 id="about-title">關於我</h2><p class="section-intro">從學習者的角度出發，讓每一次練習與每一段旋律，都成為認識音樂的過程。</p></div>
+      </div>
+      <div class="about-grid">
+        <blockquote class="quote">「音樂讓我們用另一種語言，說出心裡難以形容的感受。」</blockquote>
+        <div class="about-text">
+          <p>我是周琳芸，目前就讀國立臺灣師範大學音樂學系，主修鋼琴。從小接觸鋼琴，音樂一直是生活中重要的一部分。隨著學習歷程累積，我逐漸體會到，演奏不只是熟悉作品與技巧，更需要理解作品背後的情感、脈絡與聲音層次。</p>
+          <p>除了持續投入音樂演奏，我也對音樂教育抱持熱忱。期待未來能把自己在學習與練習中獲得的經驗，轉化成容易親近、能引發好奇心的教學方式，陪伴更多人找到與音樂相處的可能。</p>
+          <div class="facts">
+            <div class="fact"><strong>國立臺灣師範大學</strong><span>音樂學系</span></div>
+            <div class="fact"><strong>鋼琴</strong><span>主要學習與演奏方向</span></div>
+            <div class="fact"><strong>音樂教育</strong><span>持續探索的專業興趣</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section practice" id="practice" aria-labelledby="practice-title">
+      <div class="section-head">
+        <div class="section-no">02 / PRACTICE</div>
+        <div><h2 id="practice-title">音樂實踐</h2><p class="section-intro">以演奏為根基，從不同角度理解音樂，讓專業學習與生活經驗彼此連結。</p></div>
+      </div>
+      <div class="practice-grid">
+        <article class="practice-item"><div class="index">01 — PERFORMANCE</div><h3>鋼琴演奏</h3><p>持續累積曲目、技巧與詮釋經驗，重視樂句、音色與作品風格的理解，讓演奏保有細膩而真誠的表達。</p></article>
+        <article class="practice-item"><div class="index">02 — LISTENING</div><h3>聆聽與理解</h3><p>透過主動聆聽、比較與分析，認識不同時期、風格與文化中的音樂語言，拓展對聲音的感受力。</p></article>
+        <article class="practice-item"><div class="index">03 — EDUCATION</div><h3>音樂教育</h3><p>關注如何把抽象的音樂概念轉化為容易理解的學習經驗，讓不同背景的人都能參與音樂。</p></article>
+        <article class="practice-item"><div class="index">04 — REFLECTION</div><h3>學習與反思</h3><p>把每一次練習視為持續修正與成長的機會，也從教學、合作與生活經驗中重新思考音樂的意義。</p></article>
+      </div>
+    </section>
+
+    <section class="belief" id="belief" aria-labelledby="belief-title">
+      <div class="belief-mark" aria-hidden="true">𝄞</div>
+      <div class="eyebrow">MY EDUCATION BELIEF</div>
+      <h2 id="belief-title">讓音樂成為可以親近、可以分享的日常。</h2>
+      <p>我相信音樂教育不應只停留在正確的音符與技巧，也應保留探索、感受與表達的空間。好的學習經驗，能讓人逐漸建立自信，並找到屬於自己的聲音。</p>
+    </section>
+
+    <section class="section contact" id="contact" aria-labelledby="contact-title">
+      <div class="section-head">
+        <div class="section-no">03 / CONNECT</div>
+        <div><h2 id="contact-title">保持交流</h2><p class="section-intro">音樂是一段持續進行的旅程，期待透過演奏、學習與交流，遇見更多不同的聲音與想法。</p></div>
+      </div>
+      <div class="contact-inner">
+        <div><h3>Thank you for listening.</h3><p>謝謝你來到這裡，願我們都能在音樂裡，找到值得珍藏的片刻。</p></div>
+        <a class="button" href="#home">回到首頁 ↑</a>
+      </div>
+    </section>
+  </main>
+  <footer><span>© <span id="year"></span> LINYUN CHOU · MUSIC & EDUCATION</span><a class="top-link" href="#home">BACK TO TOP ↑</a></footer>
+  <script>
+    const menuButton = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('#site-nav');
+    menuButton.addEventListener('click', () => {
+      const isOpen = menuButton.getAttribute('aria-expanded') === 'true';
+      menuButton.setAttribute('aria-expanded', String(!isOpen));
+      nav.classList.toggle('open', !isOpen);
+    });
+    nav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('open');
+        menuButton.setAttribute('aria-expanded', 'false');
+      });
+    });
+    document.querySelector('#year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
